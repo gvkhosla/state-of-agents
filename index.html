@@ -2,65 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>State of Agents</title>
-    <meta
-      name="description"
-      content="State of Agents is a forthcoming research report on models, agents, work, and society."
-    />
-    <meta name="theme-color" content="#080b0f" />
+    <meta name="description" content="A forthcoming report on models, agents, work, and society." />
+    <meta name="theme-color" content="#05070a" />
+    <link rel="canonical" href="https://stateofagents.org" />
+    <meta property="og:title" content="State of Agents" />
+    <meta property="og:description" content="Models. Agents. Work. Society." />
+    <meta property="og:url" content="https://stateofagents.org" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
 
-    <main class="page">
+    <main class="shell">
       <header class="nav">
-        <a class="brand" href="/" aria-label="State of Agents home">
-          <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
-            <path class="logo-ring" d="M32 8 56 32 32 56 8 32Z" />
-            <path class="logo-ring inner" d="M32 18 46 32 32 46 18 32Z" />
-            <path class="logo-axis" d="M18 32h28M32 18v28" />
-            <circle class="logo-dot" cx="32" cy="32" r="3" />
+        <a class="brand" href="/" aria-label="State of Agents">
+          <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="7" y="7" width="34" height="34" rx="2" />
+            <path d="M15 31h18M15 24h18M15 17h18" />
+            <circle cx="33" cy="24" r="3" />
           </svg>
           <span>State of Agents</span>
         </a>
-        <span class="nav-note">2026</span>
+        <span class="year">2026</span>
       </header>
 
-      <section class="hero" aria-label="Intro">
-        <p class="kicker">Forthcoming research</p>
-        <h1>State<br />of Agents</h1>
-        <p class="dek">Models. Agents. Work. Society.</p>
+      <section class="hero">
+        <div class="copy">
+          <p class="eyebrow">Forthcoming report</p>
+          <h1>State of<br />Agents</h1>
+          <p class="line">Models. Agents. Work. Society.</p>
 
-        <form class="signup" aria-label="Get the report">
-          <label class="sr-only" for="email">Email address</label>
-          <input id="email" type="email" placeholder="email" autocomplete="email" required />
-          <button type="submit">Notify me</button>
-        </form>
+          <form class="signup" aria-label="Get notified">
+            <label class="sr-only" for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="email" autocomplete="email" required />
+            <button type="submit">Notify</button>
+          </form>
+        </div>
+
+        <div class="object" aria-label="Five-layer AI stack">
+          <div class="plate plate-1"><span>Compute</span></div>
+          <div class="plate plate-2"><span>Models</span></div>
+          <div class="plate plate-3"><span>Agents</span></div>
+          <div class="plate plate-4"><span>Apps</span></div>
+          <div class="plate plate-5"><span>Society</span></div>
+          <div class="core" aria-hidden="true"></div>
+        </div>
       </section>
 
-      <section class="artifact" aria-label="Research artifact">
-        <div class="artifact-card">
-          <p>AI STACK / FIELD NOTES</p>
-          <ol>
-            <li><span>01</span>Compute</li>
-            <li><span>02</span>Models</li>
-            <li><span>03</span>Agents</li>
-            <li><span>04</span>Applications</li>
-            <li><span>05</span>Society</li>
-          </ol>
-        </div>
-        <div class="question-card">
-          <p>What works?</p>
-          <p>Who benefits?</p>
-          <p>What changes?</p>
-        </div>
+      <section class="questions" aria-label="Research questions">
+        <p>What works?</p>
+        <p>Who benefits?</p>
+        <p>What changes?</p>
       </section>
 
       <footer>
-        <p>Independent research by Geet Khosla.</p>
-        <p>stateofagents.org</p>
+        <span>Independent research by Geet Khosla.</span>
+        <span>stateofagents.org</span>
       </footer>
     </main>
 
@@ -69,7 +70,7 @@
       form?.addEventListener('submit', (event) => {
         event.preventDefault();
         const button = form.querySelector('button');
-        button.textContent = 'Recorded';
+        button.textContent = 'Saved';
         button.disabled = true;
       });
     </script>
