@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>State of Agents — Research Report</title>
+    <meta
+      name="description"
+      content="State of Agents is an independent research report on AI agent adoption, reliability, interfaces, and market structure."
+    />
+    <meta name="theme-color" content="#0d1116" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="nav">
+        <a class="brand" href="/">State of Agents</a>
+        <span>Research report · 2026</span>
+      </header>
+
+      <section class="hero">
+        <p class="kicker">Independent field research</p>
+        <h1>State of Agents</h1>
+        <p class="dek">
+          A research report on how AI agents are moving from demonstrations to dependable systems.
+        </p>
+
+        <dl class="metadata" aria-label="Report metadata">
+          <div>
+            <dt>Status</dt>
+            <dd>Forthcoming</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Models, agents, infrastructure, applications, labor, society</dd>
+          </div>
+          <div>
+            <dt>Audience</dt>
+            <dd>Builders, operators, investors, researchers</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="abstract" aria-label="Abstract">
+        <p class="section-label">Abstract</p>
+        <p>
+          The report examines the full AI stack: frontier and open models, agent runtimes, tool and memory systems,
+          application workflows, and the broader social consequences of delegation. It asks where agent systems are
+          producing repeatable value, where they remain brittle, and how they may reshape jobs, teams, markets, and
+          institutions.
+        </p>
+      </section>
+
+      <section class="stack" aria-label="Five layer AI stack">
+        <p class="section-label">The five-layer AI stack</p>
+        <div class="stack-list">
+          <article>
+            <span>01</span>
+            <h2>Compute + data</h2>
+            <p>The capital, chips, datasets, and energy constraints shaping who can build at the frontier.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>Models</h2>
+            <p>Frontier, open, local, and specialized models — and what their capabilities make newly possible.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>Agent infrastructure</h2>
+            <p>Tool use, memory, evals, orchestration, permissions, traces, and recovery systems.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h2>Applications</h2>
+            <p>The workflows where agents are becoming products: coding, research, operations, support, sales, and personal work.</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h2>Society</h2>
+            <p>The impact on jobs, management, skills, wages, institutions, regulation, and who captures the gains.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="method">
+        <p class="section-label">Research questions</p>
+        <ol>
+          <li>Which model capabilities matter in practice, and which remain benchmark theater?</li>
+          <li>Which agent workflows are reliable enough to use repeatedly?</li>
+          <li>What separates production systems from impressive demos?</li>
+          <li>How will agentic software change jobs, teams, wages, and managerial leverage?</li>
+          <li>Where is value likely to accrue across the stack?</li>
+        </ol>
+      </section>
+
+      <section class="signup-block">
+        <div>
+          <p class="section-label">Release notice</p>
+          <h2>Receive the report when published.</h2>
+        </div>
+        <form class="signup" aria-label="Get the report">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          <button type="submit">Notify me</button>
+        </form>
+      </section>
+
+      <footer>
+        <p>Independent research by Geet Khosla.</p>
+        <p>State of Agents, 2026.</p>
+      </footer>
+    </main>
+
+    <script>
+      const form = document.querySelector('.signup');
+      form?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const button = form.querySelector('button');
+        button.textContent = 'Recorded';
+        button.disabled = true;
+      });
+    </script>
+  </body>
+</html>
