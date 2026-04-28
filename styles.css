@@ -279,6 +279,16 @@ footer {
   align-self: end;
 }
 
+footer a {
+  color: var(--ink);
+  text-decoration-color: rgba(199, 106, 85, 0.55);
+  text-underline-offset: 0.18em;
+}
+
+footer a:hover {
+  color: var(--rust);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
