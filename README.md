@@ -1,6 +1,10 @@
 # State of Agents Landing Page
 
-A simple static landing page inspired by pi.dev's dark editorial feel.
+A simple static landing page for the State of Agents research report.
+
+Live: https://stateofagents.org
+
+Repo: https://github.com/gvkhosla/state-of-agents
 
 ## Files
 
@@ -18,8 +22,7 @@ python3 -m http.server 4173
 
 Open <http://localhost:4173>.
 
-## Before publishing
+## Before publishing the report
 
 - Replace the placeholder form behavior with your email/waitlist provider.
-- Update footer/citation URL once you pick the domain.
-- Adjust research counts in the hero card if needed.
+- Add final report sections or download links when ready.
