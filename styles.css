@@ -1,17 +1,16 @@
 :root {
-  color-scheme: dark;
-  --bg: #080a0f;
-  --panel: rgba(255, 255, 255, 0.052);
-  --panel-strong: rgba(255, 255, 255, 0.082);
-  --line: rgba(235, 241, 248, 0.13);
-  --line-strong: rgba(235, 241, 248, 0.22);
-  --ink: #f7f8fb;
-  --muted: rgba(247, 248, 251, 0.7);
-  --dim: rgba(247, 248, 251, 0.45);
-  --blue: #9ecbff;
-  --blue-strong: #c7e0ff;
-  --mono: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace;
+  color-scheme: light;
+  --paper: #f4f1ea;
+  --paper-2: #ebe6dc;
+  --ink: #101418;
+  --muted: rgba(16, 20, 24, 0.68);
+  --dim: rgba(16, 20, 24, 0.46);
+  --line: rgba(16, 20, 24, 0.16);
+  --line-strong: rgba(16, 20, 24, 0.32);
+  --blue: #245cff;
+  --blue-soft: rgba(36, 92, 255, 0.08);
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -21,7 +20,7 @@
 
 html {
   min-height: 100%;
-  background: var(--bg);
+  background: var(--paper);
   font-size: 18px;
   scroll-behavior: smooth;
 }
@@ -30,24 +29,14 @@ body {
   min-height: 100svh;
   margin: 0;
   background:
-    radial-gradient(circle at 50% -18rem, rgba(158, 203, 255, 0.19), transparent 38rem),
-    linear-gradient(180deg, #0b1018 0%, var(--bg) 48%, #05070b 100%);
+    linear-gradient(90deg, rgba(16, 20, 24, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 80% 8%, rgba(36, 92, 255, 0.1), transparent 28rem),
+    var(--paper);
+  background-size: calc((100vw - min(100vw - 2rem, 74rem)) / 2 + 6rem) 100%, auto, auto;
   color: var(--ink);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, transparent 0, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.032), transparent 22rem);
-  background-size: 6rem 100%, auto;
-  mask-image: linear-gradient(180deg, black, transparent 68%);
 }
 
 button,
@@ -66,12 +55,11 @@ input:disabled {
 }
 
 ::selection {
-  background: rgba(158, 203, 255, 0.3);
+  background: rgba(36, 92, 255, 0.18);
   color: var(--ink);
 }
 
 .page {
-  position: relative;
   display: grid;
   grid-template-rows: auto auto auto auto 1fr;
   width: min(100% - 2rem, 74rem);
@@ -92,6 +80,7 @@ footer {
 
 .nav {
   padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .brand,
@@ -107,11 +96,11 @@ footer {
 }
 
 .brand-mark {
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.64rem;
+  height: 0.64rem;
+  border: 2px solid var(--ink);
   border-radius: 999rem;
   background: var(--blue);
-  box-shadow: 0 0 1.8rem rgba(158, 203, 255, 0.65);
 }
 
 .nav-links {
@@ -132,30 +121,30 @@ footer a:hover {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(21rem, 0.48fr);
+  grid-template-columns: minmax(0, 1fr) minmax(21rem, 0.43fr);
   gap: clamp(3rem, 7vw, 7rem);
   align-items: end;
-  padding: clamp(5.5rem, 14vh, 9rem) 0 clamp(3.5rem, 8vh, 5.25rem);
+  padding: clamp(5.5rem, 13vh, 8.5rem) 0 clamp(4.25rem, 8vh, 5.75rem);
 }
 
-.hero-main {
+.hero-copy {
   min-width: 0;
 }
 
-.eyebrow,
+.kicker,
 .note,
-.report-card,
-.themes,
+.report,
+.strip,
 .section-label,
 .question-list article span {
   font-family: var(--mono);
 }
 
-.eyebrow {
-  margin: 0 0 1.18rem;
+.kicker {
+  margin: 0 0 1.1rem;
   color: var(--blue);
   font-size: 0.68rem;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -163,44 +152,42 @@ h1,
 h2,
 h3,
 p,
-ol {
+dl {
   margin-top: 0;
 }
 
 h1 {
-  max-width: 10ch;
+  max-width: 9.5ch;
   margin-bottom: 0;
-  font-size: clamp(5rem, 10.8vw, 10.2rem);
-  font-weight: 660;
-  letter-spacing: -0.09em;
-  line-height: 0.84;
+  font-size: clamp(5.4rem, 11.5vw, 11rem);
+  font-weight: 720;
+  letter-spacing: -0.095em;
+  line-height: 0.82;
 }
 
 .lede {
-  max-width: 43rem;
-  margin: 1.55rem 0 0;
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
   color: var(--muted);
-  font-size: clamp(1.18rem, 2vw, 1.5rem);
-  letter-spacing: -0.04em;
-  line-height: 1.15;
+  font-size: clamp(1.2rem, 2vw, 1.54rem);
+  letter-spacing: -0.043em;
+  line-height: 1.14;
 }
 
 .signup {
   display: flex;
-  width: min(100%, 31rem);
-  margin-top: 2rem;
-  padding: 0.32rem;
+  width: min(100%, 32rem);
+  margin-top: 2.1rem;
+  padding: 0.34rem;
   border: 1px solid var(--line-strong);
-  border-radius: 0.9rem;
-  background: rgba(255, 255, 255, 0.045);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(16px);
+  border-radius: 999rem;
+  background: rgba(255, 255, 255, 0.5);
   transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
 }
 
 .signup:focus-within {
-  border-color: rgba(158, 203, 255, 0.72);
-  box-shadow: 0 0 0 4px rgba(158, 203, 255, 0.1), 0 30px 90px rgba(0, 0, 0, 0.28);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(36, 92, 255, 0.1);
 }
 
 input {
@@ -209,21 +196,21 @@ input {
   outline: 0;
   background: transparent;
   color: var(--ink);
-  padding: 0.9rem 1rem;
+  padding: 0.86rem 1.05rem;
   font-family: var(--mono);
   font-size: 0.78rem;
 }
 
 input::placeholder {
-  color: rgba(247, 248, 251, 0.34);
+  color: rgba(16, 20, 24, 0.36);
 }
 
 button {
-  min-width: 7.45rem;
-  border-radius: 0.65rem;
+  min-width: 7.5rem;
+  border-radius: 999rem;
   background: var(--ink);
-  color: var(--bg);
-  padding: 0.9rem 1.05rem;
+  color: var(--paper);
+  padding: 0.86rem 1.08rem;
   font-family: var(--mono);
   font-size: 0.76rem;
   font-weight: 700;
@@ -233,7 +220,7 @@ button {
 
 @media (hover: hover) and (pointer: fine) {
   button:hover {
-    background: var(--blue-strong);
+    background: var(--blue);
   }
 }
 
@@ -252,95 +239,120 @@ button:disabled {
   font-size: 0.66rem;
 }
 
-.report-card {
+.report {
   position: relative;
   padding: 1rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 1rem;
-  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
-  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(16px);
+  border: 1px solid var(--ink);
+  border-radius: 1.1rem;
+  background: rgba(244, 241, 234, 0.78);
+  box-shadow: 0.7rem 0.7rem 0 var(--ink);
 }
 
-.report-card::before {
+.report::before {
   content: "";
   position: absolute;
-  inset: -1px -1px auto;
+  left: 1rem;
+  right: 1rem;
+  top: 3.05rem;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(158, 203, 255, 0.62), transparent);
+  background: var(--line-strong);
 }
 
-.card-top {
+.report-header {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   color: var(--dim);
   font-size: 0.62rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.outline {
-  display: grid;
-  gap: 0;
-  margin: 1.6rem 0 0;
-  padding: 0;
-  list-style: none;
+.report-title {
+  margin-top: 2.8rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line-strong);
 }
 
-.outline li {
-  display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr);
-  gap: 0.9rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
-}
-
-.outline li:first-child {
-  border-top: 0;
-}
-
-.outline span {
+.report-title span {
+  display: block;
   color: var(--blue);
   font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.outline strong {
+.report-title strong {
   display: block;
-  color: var(--ink);
-  font-size: 0.82rem;
-  letter-spacing: -0.02em;
+  max-width: 18rem;
+  margin-top: 0.65rem;
+  font-family: var(--sans);
+  font-size: clamp(1.65rem, 2.7vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
 }
 
-.outline p {
-  margin: 0.3rem 0 0;
-  color: var(--dim);
-  font-size: 0.68rem;
-  line-height: 1.35;
+.report-list {
+  display: grid;
+  gap: 0;
+  margin-bottom: 0;
 }
 
-.themes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  padding: 0 0 clamp(3.5rem, 8vh, 5rem);
+.report-list div {
+  display: grid;
+  grid-template-columns: 5.3rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.themes span {
-  border: 1px solid var(--line);
-  border-radius: 999rem;
-  background: rgba(255, 255, 255, 0.032);
+.report-list div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0.15rem;
+}
+
+.report-list dt,
+.report-list dd {
+  margin: 0;
+}
+
+.report-list dt {
+  color: var(--blue);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.report-list dd {
   color: var(--muted);
-  padding: 0.5rem 0.7rem;
-  font-size: 0.66rem;
+  font-size: 0.7rem;
+  line-height: 1.36;
+}
+
+.strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.strip span {
+  padding: 1rem 0;
+  color: var(--ink);
+  font-size: 0.72rem;
+}
+
+.strip span + span {
+  border-left: 1px solid var(--line);
+  padding-left: 1rem;
 }
 
 .questions {
   display: grid;
   grid-template-columns: 15rem minmax(0, 1fr);
   gap: clamp(2rem, 6vw, 6rem);
-  padding: clamp(3.5rem, 7vh, 5rem) 0 clamp(3rem, 7vh, 4.75rem);
-  border-top: 1px solid var(--line);
+  padding: clamp(4.5rem, 8vh, 6rem) 0 clamp(3.8rem, 8vh, 5.25rem);
 }
 
 .section-label {
@@ -350,19 +362,19 @@ button:disabled {
   text-transform: uppercase;
 }
 
-.question-content h2 {
+.questions-body h2 {
   max-width: 45rem;
-  margin-bottom: 2rem;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  font-weight: 650;
-  letter-spacing: -0.075em;
-  line-height: 0.95;
+  margin-bottom: 2.3rem;
+  font-size: clamp(2.25rem, 4.6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.92;
 }
 
 .question-list {
   display: grid;
   gap: 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-strong);
 }
 
 .question-list article {
@@ -381,14 +393,14 @@ button:disabled {
 
 .question-list h3 {
   margin-bottom: 0;
-  font-size: clamp(1.25rem, 2vw, 1.7rem);
-  font-weight: 630;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 1;
 }
 
 .question-list p {
-  max-width: 30rem;
+  max-width: 31rem;
   margin-bottom: 0;
   color: var(--muted);
   font-size: 0.92rem;
@@ -398,13 +410,14 @@ button:disabled {
 
 footer {
   align-self: end;
-  padding: 1.3rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
 }
 
 footer a {
   color: var(--ink);
   text-decoration: underline;
-  text-decoration-color: rgba(158, 203, 255, 0.45);
+  text-decoration-color: rgba(36, 92, 255, 0.35);
   text-underline-offset: 0.22em;
 }
 
@@ -420,9 +433,13 @@ footer a {
   border: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 920px) {
   html {
     font-size: 16px;
+  }
+
+  body {
+    background-size: 4rem 100%, auto, auto;
   }
 
   .page {
@@ -436,12 +453,12 @@ footer a {
 
   .hero {
     align-items: start;
-    gap: 2.5rem;
-    padding: 4.7rem 0 3rem;
+    gap: 2.75rem;
+    padding: 4.7rem 0 3.75rem;
   }
 
   h1 {
-    font-size: clamp(4.15rem, 18vw, 8rem);
+    font-size: clamp(4.25rem, 18vw, 8.2rem);
   }
 
   .questions {
@@ -465,11 +482,29 @@ footer a {
   .signup {
     display: grid;
     width: 100%;
+    border-radius: 1rem;
   }
 
   input,
   button {
     width: 100%;
+  }
+
+  .report {
+    box-shadow: 0.38rem 0.38rem 0 var(--ink);
+  }
+
+  .strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .strip span:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .strip span:nth-child(4) {
+    border-top: 1px solid var(--line);
   }
 
   .question-list article {
