@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>State of Agents</title>
     <meta name="description" content="A forthcoming field report on models, agents, work, and society." />
-    <meta name="theme-color" content="#081018" />
+    <meta name="theme-color" content="#070b10" />
     <link rel="canonical" href="https://stateofagents.org" />
     <meta property="og:title" content="State of Agents" />
     <meta property="og:description" content="Models. Agents. Work. Society." />
@@ -14,118 +14,123 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="orb orb-a" aria-hidden="true"></div>
-    <div class="orb orb-b" aria-hidden="true"></div>
-
-    <main class="shell">
+    <main class="page">
       <header class="nav" aria-label="Site header">
         <a class="brand" href="/" aria-label="State of Agents home">
-          <span class="mark" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
-          </span>
+          <span class="brand-mark" aria-hidden="true"></span>
           <span>State of Agents</span>
         </a>
         <nav class="nav-links" aria-label="Report navigation">
-          <a href="#agenda">Agenda</a>
+          <a href="#questions">Questions</a>
           <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a>
-          <span>2026</span>
         </nav>
       </header>
 
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span></span>Forthcoming AI field report</p>
+          <p class="label">Forthcoming research report · 2026</p>
           <h1 id="hero-title">State of Agents</h1>
-          <p class="dek">Evidence on where AI agents are actually working — across capability, adoption, labor, interfaces, and trust.</p>
+          <p class="lede">A clear-eyed report on where AI agents are useful now, where they fail in practice, and how they will reshape software, labor, and trust.</p>
 
           <form class="signup" aria-label="Get notified when the report launches">
             <label class="sr-only" for="email">Email address</label>
             <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
             <button type="submit"><span>Notify me</span></button>
           </form>
-          <p class="form-note" role="status" aria-live="polite">Research notes and launch notification only.</p>
-
-          <dl class="scope-list" aria-label="Report scope">
-            <div>
-              <dt>Scope</dt>
-              <dd>Models → agents → applications → society</dd>
-            </div>
-            <div>
-              <dt>Method</dt>
-              <dd>Market scans, operator interviews, deployment evidence</dd>
-            </div>
-            <div>
-              <dt>Output</dt>
-              <dd>A concise report for builders, investors, and operators</dd>
-            </div>
-          </dl>
+          <p class="note" role="status" aria-live="polite">Launch note only. No newsletter drip.</p>
         </div>
 
-        <aside class="lab-panel" aria-label="Research preview dashboard">
-          <div class="panel-head">
-            <div>
-              <span class="panel-kicker">Agent readiness</span>
-              <strong>Research console</strong>
-            </div>
-            <span class="status"><i></i>Collecting</span>
+        <aside class="brief" aria-label="Report brief">
+          <div class="brief-header">
+            <span>SOA / 2026</span>
+            <span>In progress</span>
           </div>
 
-          <div class="model-map" aria-hidden="true">
-            <div class="node node-core">Agents</div>
-            <div class="node node-1">Models</div>
-            <div class="node node-2">Tools</div>
-            <div class="node node-3">Workflows</div>
-            <div class="node node-4">Trust</div>
-            <svg viewBox="0 0 520 260" preserveAspectRatio="none">
-              <path d="M260 132 C174 88 140 66 84 54" />
-              <path d="M260 132 C350 82 395 74 456 58" />
-              <path d="M260 132 C158 150 119 174 74 212" />
-              <path d="M260 132 C354 156 398 184 448 218" />
-            </svg>
+          <div class="brief-title">
+            <p>Research scope</p>
+            <h2>Models become infrastructure. Agents become the interface.</h2>
           </div>
 
-          <div class="metric-grid" aria-label="Research dimensions">
-            <div>
+          <div class="index" aria-label="Report readiness dimensions">
+            <div class="index-row">
               <span>Capability</span>
-              <strong>What can run?</strong>
+              <i style="--value: 72%"></i>
+              <em>72</em>
             </div>
-            <div>
+            <div class="index-row">
+              <span>Reliability</span>
+              <i style="--value: 41%"></i>
+              <em>41</em>
+            </div>
+            <div class="index-row">
               <span>Adoption</span>
-              <strong>Who is deploying?</strong>
+              <i style="--value: 58%"></i>
+              <em>58</em>
             </div>
-            <div>
-              <span>Economics</span>
-              <strong>Where does value accrue?</strong>
-            </div>
-            <div>
-              <span>Risk</span>
-              <strong>What breaks in practice?</strong>
+            <div class="index-row">
+              <span>Governance</span>
+              <i style="--value: 29%"></i>
+              <em>29</em>
             </div>
           </div>
+
+          <dl class="brief-meta">
+            <div>
+              <dt>Method</dt>
+              <dd>Operator interviews, market scans, deployment evidence.</dd>
+            </div>
+            <div>
+              <dt>Audience</dt>
+              <dd>Builders, investors, researchers, and technology operators.</dd>
+            </div>
+          </dl>
         </aside>
       </section>
 
-      <section id="agenda" class="agenda" aria-labelledby="agenda-title">
-        <div class="section-head">
-          <p>Research agenda</p>
-          <h2 id="agenda-title">Three questions separate signal from AI theater.</h2>
+      <section class="themes" aria-label="Report themes">
+        <div>
+          <span>01</span>
+          <strong>Models</strong>
         </div>
+        <div>
+          <span>02</span>
+          <strong>Agents</strong>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>Work</strong>
+        </div>
+        <div>
+          <span>04</span>
+          <strong>Society</strong>
+        </div>
+      </section>
 
-        <div class="question-grid">
+      <section id="questions" class="questions" aria-labelledby="questions-title">
+        <div class="section-kicker">Research questions</div>
+        <h2 id="questions-title">The report is organized around three practical questions.</h2>
+
+        <div class="question-list">
           <article>
             <span>01</span>
-            <h3>What works?</h3>
-            <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
+            <div>
+              <h3>What works?</h3>
+              <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
+            </div>
           </article>
           <article>
             <span>02</span>
-            <h3>Who benefits?</h3>
-            <p>Which teams, workflows, and markets capture leverage first.</p>
+            <div>
+              <h3>Who benefits?</h3>
+              <p>Which teams, workflows, and markets capture leverage first.</p>
+            </div>
           </article>
           <article>
             <span>03</span>
-            <h3>What changes?</h3>
-            <p>The operating assumptions that shift as software begins to act.</p>
+            <div>
+              <h3>What changes?</h3>
+              <p>The operating assumptions that shift as software begins to act on behalf of people.</p>
+            </div>
           </article>
         </div>
       </section>
@@ -138,17 +143,17 @@
 
     <script>
       const form = document.querySelector('.signup');
-      const note = document.querySelector('.form-note');
+      const note = document.querySelector('.note');
 
       form?.addEventListener('submit', (event) => {
         event.preventDefault();
-        const buttonLabel = form.querySelector('button span');
-        const input = form.querySelector('input');
         const button = form.querySelector('button');
+        const label = form.querySelector('button span');
+        const input = form.querySelector('input');
 
-        if (buttonLabel) buttonLabel.textContent = 'Saved';
-        if (input) input.disabled = true;
+        if (label) label.textContent = 'Saved';
         if (button) button.disabled = true;
+        if (input) input.disabled = true;
         if (note) note.textContent = 'You’re on the list. We’ll send the report when it is ready.';
       });
     </script>
