@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>State of Agents</title>
     <meta name="description" content="A forthcoming field report on models, agents, work, and society." />
-    <meta name="theme-color" content="#10151c" />
+    <meta name="theme-color" content="#081018" />
     <link rel="canonical" href="https://stateofagents.org" />
     <meta property="og:title" content="State of Agents" />
     <meta property="og:description" content="Models. Agents. Work. Society." />
@@ -14,19 +14,19 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="ambient ambient-rust" aria-hidden="true"></div>
-    <div class="ambient ambient-blue" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
 
     <main class="shell">
       <header class="nav" aria-label="Site header">
         <a class="brand" href="/" aria-label="State of Agents home">
           <span class="mark" aria-hidden="true">
-            <span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
           </span>
           <span>State of Agents</span>
         </a>
-        <nav class="nav-meta" aria-label="Report metadata">
+        <nav class="nav-links" aria-label="Report navigation">
+          <a href="#agenda">Agenda</a>
           <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a>
           <span>2026</span>
         </nav>
@@ -34,72 +34,100 @@
 
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="kicker"><span></span>Forthcoming research</div>
+          <p class="eyebrow"><span></span>Forthcoming AI field report</p>
           <h1 id="hero-title">State of Agents</h1>
-          <p class="dek">A field report on what happens when models become coworkers, tools become operators, and software starts taking action.</p>
+          <p class="dek">Evidence on where AI agents are actually working — across capability, adoption, labor, interfaces, and trust.</p>
 
           <form class="signup" aria-label="Get notified when the report launches">
             <label class="sr-only" for="email">Email address</label>
             <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
             <button type="submit"><span>Notify me</span></button>
           </form>
-          <p class="form-note" role="status" aria-live="polite">No spam. Just the report and supporting notes.</p>
+          <p class="form-note" role="status" aria-live="polite">Research notes and launch notification only.</p>
 
-          <div class="hero-meta" aria-label="Report themes">
-            <span>Models</span>
-            <span>Agents</span>
-            <span>Work</span>
-            <span>Society</span>
-          </div>
+          <dl class="scope-list" aria-label="Report scope">
+            <div>
+              <dt>Scope</dt>
+              <dd>Models → agents → applications → society</dd>
+            </div>
+            <div>
+              <dt>Method</dt>
+              <dd>Market scans, operator interviews, deployment evidence</dd>
+            </div>
+            <div>
+              <dt>Output</dt>
+              <dd>A concise report for builders, investors, and operators</dd>
+            </div>
+          </dl>
         </div>
 
-        <aside class="artifact" aria-label="State of Agents report preview">
-          <div class="artifact-topline">
-            <span>Field notes / draft index</span>
-            <span>v0.1</span>
+        <aside class="lab-panel" aria-label="Research preview dashboard">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Agent readiness</span>
+              <strong>Research console</strong>
+            </div>
+            <span class="status"><i></i>Collecting</span>
           </div>
 
-          <div class="report-cover">
-            <p>State of Agents</p>
-            <strong>Models. Agents. Work. Society.</strong>
+          <div class="model-map" aria-hidden="true">
+            <div class="node node-core">Agents</div>
+            <div class="node node-1">Models</div>
+            <div class="node node-2">Tools</div>
+            <div class="node node-3">Workflows</div>
+            <div class="node node-4">Trust</div>
+            <svg viewBox="0 0 520 260" preserveAspectRatio="none">
+              <path d="M260 132 C174 88 140 66 84 54" />
+              <path d="M260 132 C350 82 395 74 456 58" />
+              <path d="M260 132 C158 150 119 174 74 212" />
+              <path d="M260 132 C354 156 398 184 448 218" />
+            </svg>
           </div>
 
-          <div class="signal-map" aria-hidden="true">
-            <span class="axis axis-y">agency</span>
-            <span class="axis axis-x">adoption</span>
-            <span class="dot dot-1"></span>
-            <span class="dot dot-2"></span>
-            <span class="dot dot-3"></span>
-            <span class="dot dot-4"></span>
-            <span class="trajectory"></span>
+          <div class="metric-grid" aria-label="Research dimensions">
+            <div>
+              <span>Capability</span>
+              <strong>What can run?</strong>
+            </div>
+            <div>
+              <span>Adoption</span>
+              <strong>Who is deploying?</strong>
+            </div>
+            <div>
+              <span>Economics</span>
+              <strong>Where does value accrue?</strong>
+            </div>
+            <div>
+              <span>Risk</span>
+              <strong>What breaks in practice?</strong>
+            </div>
           </div>
-
-          <ol class="stack-list" aria-label="AI stack layers">
-            <li><span>01</span><strong>Compute</strong><em>infrastructure pressure</em></li>
-            <li><span>02</span><strong>Models</strong><em>capability frontier</em></li>
-            <li class="active"><span>03</span><strong>Agents</strong><em>autonomous workflows</em></li>
-            <li><span>04</span><strong>Applications</strong><em>interface shift</em></li>
-            <li><span>05</span><strong>Society</strong><em>labor & trust</em></li>
-          </ol>
         </aside>
       </section>
 
-      <section class="questions" aria-label="Research questions">
-        <article>
-          <span>01</span>
-          <h2>What works?</h2>
-          <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h2>Who benefits?</h2>
-          <p>Which teams, workflows, and markets capture leverage first.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h2>What changes?</h2>
-          <p>The operating assumptions that shift as software begins to act.</p>
-        </article>
+      <section id="agenda" class="agenda" aria-labelledby="agenda-title">
+        <div class="section-head">
+          <p>Research agenda</p>
+          <h2 id="agenda-title">Three questions separate signal from AI theater.</h2>
+        </div>
+
+        <div class="question-grid">
+          <article>
+            <span>01</span>
+            <h3>What works?</h3>
+            <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Who benefits?</h3>
+            <p>Which teams, workflows, and markets capture leverage first.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>What changes?</h3>
+            <p>The operating assumptions that shift as software begins to act.</p>
+          </article>
+        </div>
       </section>
 
       <footer>
@@ -114,12 +142,13 @@
 
       form?.addEventListener('submit', (event) => {
         event.preventDefault();
-        const button = form.querySelector('button span');
+        const buttonLabel = form.querySelector('button span');
         const input = form.querySelector('input');
+        const button = form.querySelector('button');
 
-        if (button) button.textContent = 'Saved';
+        if (buttonLabel) buttonLabel.textContent = 'Saved';
         if (input) input.disabled = true;
-        form.querySelector('button')?.setAttribute('disabled', '');
+        if (button) button.disabled = true;
         if (note) note.textContent = 'You’re on the list. We’ll send the report when it is ready.';
       });
     </script>
