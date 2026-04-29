@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>State of Agents</title>
-    <meta name="description" content="A forthcoming report on models, agents, work, and society." />
-    <meta name="theme-color" content="#05070a" />
+    <meta name="description" content="A forthcoming field report on models, agents, work, and society." />
+    <meta name="theme-color" content="#10151c" />
     <link rel="canonical" href="https://stateofagents.org" />
     <meta property="og:title" content="State of Agents" />
     <meta property="og:description" content="Models. Agents. Work. Society." />
@@ -14,64 +14,113 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="ambient ambient-rust" aria-hidden="true"></div>
+    <div class="ambient ambient-blue" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
-    <div class="glow" aria-hidden="true"></div>
 
     <main class="shell">
-      <header class="nav">
-        <a class="brand" href="/" aria-label="State of Agents">
-          <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
-            <rect x="7" y="7" width="34" height="34" rx="2" />
-            <path d="M15 31h18M15 24h18M15 17h18" />
-            <circle cx="33" cy="24" r="3" />
-          </svg>
+      <header class="nav" aria-label="Site header">
+        <a class="brand" href="/" aria-label="State of Agents home">
+          <span class="mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
           <span>State of Agents</span>
         </a>
-        <span class="year">2026</span>
+        <nav class="nav-meta" aria-label="Report metadata">
+          <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a>
+          <span>2026</span>
+        </nav>
       </header>
 
-      <section class="hero">
-        <div class="copy">
-          <p class="eyebrow">Forthcoming report</p>
-          <h1>State of<br />Agents</h1>
-          <p class="line">Models. Agents. Work. Society.</p>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="kicker"><span></span>Forthcoming research</div>
+          <h1 id="hero-title">State of Agents</h1>
+          <p class="dek">A field report on what happens when models become coworkers, tools become operators, and software starts taking action.</p>
 
-          <form class="signup" aria-label="Get notified">
+          <form class="signup" aria-label="Get notified when the report launches">
             <label class="sr-only" for="email">Email address</label>
-            <input id="email" name="email" type="email" placeholder="email" autocomplete="email" required />
-            <button type="submit">Notify</button>
+            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+            <button type="submit"><span>Notify me</span></button>
           </form>
+          <p class="form-note" role="status" aria-live="polite">No spam. Just the report and supporting notes.</p>
+
+          <div class="hero-meta" aria-label="Report themes">
+            <span>Models</span>
+            <span>Agents</span>
+            <span>Work</span>
+            <span>Society</span>
+          </div>
         </div>
 
-        <div class="object" aria-label="Five-layer AI stack">
-          <div class="plate plate-1"><span>Compute</span></div>
-          <div class="plate plate-2"><span>Models</span></div>
-          <div class="plate plate-3"><span>Agents</span></div>
-          <div class="plate plate-4"><span>Apps</span></div>
-          <div class="plate plate-5"><span>Society</span></div>
-          <div class="core" aria-hidden="true"></div>
-        </div>
+        <aside class="artifact" aria-label="State of Agents report preview">
+          <div class="artifact-topline">
+            <span>Field notes / draft index</span>
+            <span>v0.1</span>
+          </div>
+
+          <div class="report-cover">
+            <p>State of Agents</p>
+            <strong>Models. Agents. Work. Society.</strong>
+          </div>
+
+          <div class="signal-map" aria-hidden="true">
+            <span class="axis axis-y">agency</span>
+            <span class="axis axis-x">adoption</span>
+            <span class="dot dot-1"></span>
+            <span class="dot dot-2"></span>
+            <span class="dot dot-3"></span>
+            <span class="dot dot-4"></span>
+            <span class="trajectory"></span>
+          </div>
+
+          <ol class="stack-list" aria-label="AI stack layers">
+            <li><span>01</span><strong>Compute</strong><em>infrastructure pressure</em></li>
+            <li><span>02</span><strong>Models</strong><em>capability frontier</em></li>
+            <li class="active"><span>03</span><strong>Agents</strong><em>autonomous workflows</em></li>
+            <li><span>04</span><strong>Applications</strong><em>interface shift</em></li>
+            <li><span>05</span><strong>Society</strong><em>labor & trust</em></li>
+          </ol>
+        </aside>
       </section>
 
       <section class="questions" aria-label="Research questions">
-        <p>What works?</p>
-        <p>Who benefits?</p>
-        <p>What changes?</p>
+        <article>
+          <span>01</span>
+          <h2>What works?</h2>
+          <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Who benefits?</h2>
+          <p>Which teams, workflows, and markets capture leverage first.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>What changes?</h2>
+          <p>The operating assumptions that shift as software begins to act.</p>
+        </article>
       </section>
 
       <footer>
-        <span>Independent Research by <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a></span>
+        <span>Independent research by <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a></span>
         <span>stateofagents.org</span>
       </footer>
     </main>
 
     <script>
       const form = document.querySelector('.signup');
+      const note = document.querySelector('.form-note');
+
       form?.addEventListener('submit', (event) => {
         event.preventDefault();
-        const button = form.querySelector('button');
-        button.textContent = 'Saved';
-        button.disabled = true;
+        const button = form.querySelector('button span');
+        const input = form.querySelector('input');
+
+        if (button) button.textContent = 'Saved';
+        if (input) input.disabled = true;
+        form.querySelector('button')?.setAttribute('disabled', '');
+        if (note) note.textContent = 'You’re on the list. We’ll send the report when it is ready.';
       });
     </script>
   </body>
