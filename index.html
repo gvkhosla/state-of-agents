@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>State of Agents</title>
-    <meta name="description" content="A forthcoming report on models, agents, work, and society." />
-    <meta name="theme-color" content="#10151C" />
+    <meta name="description" content="An independent field report on where AI agents deliver, where they fail, and what shifts when software begins to act." />
+    <meta name="theme-color" content="#0C1017" />
     <link rel="canonical" href="https://stateofagents.org" />
     <meta property="og:title" content="State of Agents" />
-    <meta property="og:description" content="Models. Agents. Work. Society." />
+    <meta property="og:description" content="An independent field report on models, agents, work, and society." />
     <meta property="og:url" content="https://stateofagents.org" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="./styles.css" />
@@ -29,39 +29,39 @@
 
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="kicker">Forthcoming independent research</p>
+          <p class="kicker">Independent research</p>
           <h1 id="hero-title">State of Agents</h1>
-          <p class="lede">A field report on where AI agents work, where they break, and what changes as software starts taking action.</p>
+          <p class="lede">Most of what you read about AI agents is marketing. This is a field report &mdash; drawn from operator interviews, deployment data, and the gap between demos and production.</p>
 
           <form class="signup" aria-label="Get notified when the report launches">
             <label class="sr-only" for="email">Email address</label>
             <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
             <button type="submit"><span>Notify me</span></button>
           </form>
-          <p class="note" role="status" aria-live="polite">Launch note only. No spam.</p>
+          <p class="note" role="status" aria-live="polite">One email when the report ships. Nothing else.</p>
         </div>
 
         <aside class="report" aria-label="Report summary">
           <div class="report-header">
-            <span>Report / 2026</span>
+            <span>Field Report / 2026</span>
             <span>In progress</span>
           </div>
           <div class="report-title">
             <span>Scope</span>
-            <strong>Models → Agents → Work → Society</strong>
+            <strong>Models &rarr; Agents &rarr; Work &rarr; Society</strong>
           </div>
           <dl class="report-list">
             <div>
               <dt>Method</dt>
-              <dd>Operator interviews, deployment evidence, market scans.</dd>
+              <dd>Practitioner interviews, production logs, teardowns of real deployments.</dd>
             </div>
             <div>
               <dt>Audience</dt>
-              <dd>Builders, investors, researchers, and technology operators.</dd>
+              <dd>Engineers, operators, investors, and researchers who ship.</dd>
             </div>
             <div>
               <dt>Focus</dt>
-              <dd>Useful signal over demos, hype cycles, and AI theater.</dd>
+              <dd>What holds up in production. Not what demos well on stage.</dd>
             </div>
           </dl>
         </aside>
@@ -77,22 +77,22 @@
       <section id="questions" class="questions" aria-labelledby="questions-title">
         <div class="section-label">Core questions</div>
         <div class="questions-body">
-          <h2 id="questions-title">The report separates durable signal from agent hype.</h2>
+          <h2 id="questions-title">Separating durable signal from the noise.</h2>
           <div class="question-list">
             <article>
               <span>01</span>
-              <h3>What works?</h3>
-              <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
+              <h3>What actually works?</h3>
+              <p>Which agent architectures hold up under real load, and which ones collapse outside the demo.</p>
             </article>
             <article>
               <span>02</span>
-              <h3>Who benefits?</h3>
-              <p>Which teams, workflows, and markets capture leverage first.</p>
+              <h3>Who captures the value?</h3>
+              <p>The teams and business models that turn agent capability into durable leverage &mdash; not just features.</p>
             </article>
             <article>
               <span>03</span>
-              <h3>What changes?</h3>
-              <p>The assumptions that shift as software begins to act on behalf of people.</p>
+              <h3>What breaks next?</h3>
+              <p>The assumptions about work, liability, and trust that stop holding once software starts acting autonomously.</p>
             </article>
           </div>
         </div>
@@ -117,7 +117,7 @@
         if (label) label.textContent = 'Saved';
         if (button) button.disabled = true;
         if (input) input.disabled = true;
-        if (note) note.textContent = 'You are on the list. We will send the report when it is ready.';
+        if (note) note.textContent = 'You are on the list. We will email you when the report ships.';
       });
     </script>
   </body>
