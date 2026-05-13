@@ -1,124 +1,107 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scheme-only-dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>State of Agents</title>
-    <meta name="description" content="A forthcoming report on models, agents, work, and society." />
-    <meta name="theme-color" content="#f4f1ea" />
+    <meta name="description" content="State of Agents — coming soon." />
+    <meta name="theme-color" content="#111111" />
     <link rel="canonical" href="https://stateofagents.org" />
     <meta property="og:title" content="State of Agents" />
-    <meta property="og:description" content="Models. Agents. Work. Society." />
+    <meta property="og:description" content="State of Agents — coming soon." />
     <meta property="og:url" content="https://stateofagents.org" />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://stateofagents.org/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://stateofagents.org/og-image.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="page">
-      <header class="nav" aria-label="Site header">
-        <a class="brand" href="/" aria-label="State of Agents home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>State of Agents</span>
-        </a>
-        <nav class="nav-links" aria-label="Site links">
-          <a href="#questions">Questions</a>
-          <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a>
-          <span>2026</span>
-        </nav>
-      </header>
+    <canvas id="field" aria-hidden="true"></canvas>
 
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="kicker">Forthcoming independent research</p>
-          <h1 id="hero-title">State of Agents</h1>
-          <p class="lede">A field report on where AI agents work, where they break, and what changes as software starts taking action.</p>
-
-          <form class="signup" aria-label="Get notified when the report launches">
-            <label class="sr-only" for="email">Email address</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
-            <button type="submit"><span>Notify me</span></button>
-          </form>
-          <p class="note" role="status" aria-live="polite">Launch note only. No spam.</p>
-        </div>
-
-        <aside class="report" aria-label="Report summary">
-          <div class="report-header">
-            <span>Report / 2026</span>
-            <span>In progress</span>
-          </div>
-          <div class="report-title">
-            <span>Scope</span>
-            <strong>Models → Agents → Work → Society</strong>
-          </div>
-          <dl class="report-list">
-            <div>
-              <dt>Method</dt>
-              <dd>Operator interviews, deployment evidence, market scans.</dd>
-            </div>
-            <div>
-              <dt>Audience</dt>
-              <dd>Builders, investors, researchers, and technology operators.</dd>
-            </div>
-            <div>
-              <dt>Focus</dt>
-              <dd>Useful signal over demos, hype cycles, and AI theater.</dd>
-            </div>
-          </dl>
-        </aside>
+    <main class="page" aria-labelledby="title">
+      <section class="coming-soon">
+        <h1 id="title">STATE OF AGENTS</h1>
+        <p>coming soon.</p>
       </section>
-
-      <section class="strip" aria-label="Report themes">
-        <span>Models</span>
-        <span>Agents</span>
-        <span>Work</span>
-        <span>Society</span>
-      </section>
-
-      <section id="questions" class="questions" aria-labelledby="questions-title">
-        <div class="section-label">Core questions</div>
-        <div class="questions-body">
-          <h2 id="questions-title">The report separates durable signal from agent hype.</h2>
-          <div class="question-list">
-            <article>
-              <span>01</span>
-              <h3>What works?</h3>
-              <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Who benefits?</h3>
-              <p>Which teams, workflows, and markets capture leverage first.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>What changes?</h3>
-              <p>The assumptions that shift as software begins to act on behalf of people.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <span>Independent research by <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a></span>
-        <span>stateofagents.org</span>
-      </footer>
     </main>
 
     <script>
-      const form = document.querySelector('.signup');
-      const note = document.querySelector('.note');
+      const canvas = document.querySelector('#field');
+      const context = canvas.getContext('2d');
+      const state = { width: 0, height: 0, ratio: 1, stars: [] };
 
-      form?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const button = form.querySelector('button');
-        const label = form.querySelector('button span');
-        const input = form.querySelector('input');
+      const random = (min, max) => Math.random() * (max - min) + min;
 
-        if (label) label.textContent = 'Saved';
-        if (button) button.disabled = true;
-        if (input) input.disabled = true;
-        if (note) note.textContent = 'You’re on the list. We’ll send the report when it is ready.';
-      });
+      function resize() {
+        state.ratio = Math.min(window.devicePixelRatio || 1, 2);
+        state.width = window.innerWidth;
+        state.height = window.innerHeight;
+        canvas.width = Math.floor(state.width * state.ratio);
+        canvas.height = Math.floor(state.height * state.ratio);
+        canvas.style.width = `${state.width}px`;
+        canvas.style.height = `${state.height}px`;
+        context.setTransform(state.ratio, 0, 0, state.ratio, 0, 0);
+
+        const count = Math.floor((state.width * state.height) / 9500);
+        state.stars = Array.from({ length: count }, () => ({
+          x: Math.random() * state.width,
+          y: Math.random() * state.height,
+          r: random(0.35, 1.15),
+          a: random(0.16, 0.72),
+          p: random(0, Math.PI * 2),
+          s: random(0.00025, 0.0008),
+        }));
+      }
+
+      function draw(time) {
+        const { width, height, stars } = state;
+        context.clearRect(0, 0, width, height);
+
+        const gradient = context.createRadialGradient(width * 0.5, height * 0.42, 0, width * 0.5, height * 0.42, Math.max(width, height) * 0.78);
+        gradient.addColorStop(0, '#252525');
+        gradient.addColorStop(0.55, '#181818');
+        gradient.addColorStop(1, '#0d0d0d');
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, width, height);
+
+        context.save();
+        context.globalCompositeOperation = 'screen';
+        for (const star of stars) {
+          const twinkle = 0.55 + Math.sin(time * star.s + star.p) * 0.45;
+          context.globalAlpha = star.a * twinkle;
+          context.fillStyle = '#f4f1e8';
+          context.beginPath();
+          context.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+          context.fill();
+        }
+        context.restore();
+
+        context.save();
+        context.globalAlpha = 0.18;
+        context.strokeStyle = '#d8d2c2';
+        context.lineWidth = 1;
+        const base = height * 0.72;
+        for (let line = 0; line < 14; line++) {
+          const y = base + line * height * 0.025;
+          context.beginPath();
+          for (let x = -40; x <= width + 40; x += 14) {
+            const wave = Math.sin(x * 0.008 + time * 0.00018 + line * 0.7) * 12;
+            const slow = Math.sin(x * 0.002 + time * 0.00008 + line) * 22;
+            const pointY = y + wave + slow + Math.sin((x + line * 71) * 0.021) * 3;
+            if (x === -40) context.moveTo(x, pointY);
+            else context.lineTo(x, pointY);
+          }
+          context.stroke();
+        }
+        context.restore();
+
+        requestAnimationFrame(draw);
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+      requestAnimationFrame(draw);
     </script>
   </body>
 </html>
