@@ -4,121 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>State of Agents</title>
-    <meta name="description" content="A forthcoming report on models, agents, work, and society." />
-    <meta name="theme-color" content="#f4f1ea" />
+    <meta name="description" content="Coming soon." />
+    <meta name="theme-color" content="#f0ede8" />
     <link rel="canonical" href="https://stateofagents.org" />
-    <meta property="og:title" content="State of Agents" />
-    <meta property="og:description" content="Models. Agents. Work. Society." />
-    <meta property="og:url" content="https://stateofagents.org" />
-    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="page">
-      <header class="nav" aria-label="Site header">
-        <a class="brand" href="/" aria-label="State of Agents home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>State of Agents</span>
-        </a>
-        <nav class="nav-links" aria-label="Site links">
-          <a href="#questions">Questions</a>
-          <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a>
-          <span>2026</span>
-        </nav>
-      </header>
-
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="kicker">Forthcoming independent research</p>
-          <h1 id="hero-title">State of Agents</h1>
-          <p class="lede">A field report on where AI agents work, where they break, and what changes as software starts taking action.</p>
-
-          <form class="signup" aria-label="Get notified when the report launches">
-            <label class="sr-only" for="email">Email address</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
-            <button type="submit"><span>Notify me</span></button>
-          </form>
-          <p class="note" role="status" aria-live="polite">Launch note only. No spam.</p>
-        </div>
-
-        <aside class="report" aria-label="Report summary">
-          <div class="report-header">
-            <span>Report / 2026</span>
-            <span>In progress</span>
-          </div>
-          <div class="report-title">
-            <span>Scope</span>
-            <strong>Models → Agents → Work → Society</strong>
-          </div>
-          <dl class="report-list">
-            <div>
-              <dt>Method</dt>
-              <dd>Operator interviews, deployment evidence, market scans.</dd>
-            </div>
-            <div>
-              <dt>Audience</dt>
-              <dd>Builders, investors, researchers, and technology operators.</dd>
-            </div>
-            <div>
-              <dt>Focus</dt>
-              <dd>Useful signal over demos, hype cycles, and AI theater.</dd>
-            </div>
-          </dl>
-        </aside>
-      </section>
-
-      <section class="strip" aria-label="Report themes">
-        <span>Models</span>
-        <span>Agents</span>
-        <span>Work</span>
-        <span>Society</span>
-      </section>
-
-      <section id="questions" class="questions" aria-labelledby="questions-title">
-        <div class="section-label">Core questions</div>
-        <div class="questions-body">
-          <h2 id="questions-title">The report separates durable signal from agent hype.</h2>
-          <div class="question-list">
-            <article>
-              <span>01</span>
-              <h3>What works?</h3>
-              <p>Where agents are reliably useful today, and where demos still outrun deployment.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Who benefits?</h3>
-              <p>Which teams, workflows, and markets capture leverage first.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>What changes?</h3>
-              <p>The assumptions that shift as software begins to act on behalf of people.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <span>Independent research by <a href="https://khoslalab.com" target="_blank" rel="noopener noreferrer">Khosla Lab</a></span>
-        <span>stateofagents.org</span>
-      </footer>
+    <main>
+      <h1>State of Agents</h1>
+      <p>Coming soon</p>
     </main>
-
-    <script>
-      const form = document.querySelector('.signup');
-      const note = document.querySelector('.note');
-
-      form?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const button = form.querySelector('button');
-        const label = form.querySelector('button span');
-        const input = form.querySelector('input');
-
-        if (label) label.textContent = 'Saved';
-        if (button) button.disabled = true;
-        if (input) input.disabled = true;
-        if (note) note.textContent = 'You’re on the list. We’ll send the report when it is ready.';
-      });
-    </script>
   </body>
 </html>
